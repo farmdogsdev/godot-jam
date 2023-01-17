@@ -29,6 +29,8 @@ func _physics_process(delta):
 	_velocity.x = _horizontal_direction * speed
 	_velocity.y = _vertical_direction * speed
 	
+	_velocity.x+=200
+	
 	_velocity = move_and_slide(_velocity,UP_DIRECTION)
 
 
