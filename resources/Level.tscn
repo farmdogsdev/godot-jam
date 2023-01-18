@@ -1,22 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://resources/Sub.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/graphics/leviathan.png" type="Texture" id=2]
 [ext_resource path="res://Rock.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/graphics/shark.png" type="Texture" id=4]
 [ext_resource path="res://assets/graphics/school-of-fish.png" type="Texture" id=5]
+[ext_resource path="res://assets/graphics/background-water.png" type="Texture" id=6]
 
 [node name="Level" type="ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0784314, 0.203922, 0.392157, 1 )
-
-[node name="Sand - Temp" type="ColorRect" parent="."]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -50.0
-color = Color( 0.803922, 0.65098, 0.054902, 1 )
 
 [node name="Sub" parent="." instance=ExtResource( 1 )]
 position = Vector2( 144, 360 )
@@ -43,3 +36,11 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="Rock" parent="." instance=ExtResource( 3 )]
 position = Vector2( 424, 495 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 6 )
+centered = false
