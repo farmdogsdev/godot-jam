@@ -91,5 +91,5 @@ margin_top = -85.0
 margin_right = 1024.0
 margin_bottom = 85.0
 custom_fonts/font = SubResource( 7 )
-text = "for Godot game jam 2023"
+text = "for Godot wild jam 53"
 align = 1
