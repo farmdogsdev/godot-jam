@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/graphics/background-water.png" type="Texture" id=1]
 [ext_resource path="res://resources/Sub.tscn" type="PackedScene" id=2]
 [ext_resource path="res://resources/Rock.tscn" type="PackedScene" id=3]
+[ext_resource path="res://resources/GameUI.tscn" type="PackedScene" id=4]
 
 [node name="Node2D" type="Node2D"]
 
@@ -15,10 +16,10 @@ motion_mirroring = Vector2( 1020, 0 )
 texture = ExtResource( 1 )
 centered = false
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
+[node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 186, 372 )
 
-[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 39, -74 )
 current = true
 limit_left = 0
@@ -27,3 +28,14 @@ limit_bottom = 0
 
 [node name="Rock" parent="." instance=ExtResource( 3 )]
 position = Vector2( 502, 517 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameUI" parent="CanvasLayer" instance=ExtResource( 4 )]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -205.0
+margin_top = -300.0
+margin_right = -205.0
+margin_bottom = -300.0
