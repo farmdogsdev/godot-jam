@@ -25,5 +25,5 @@ limit_left = 0
 limit_top = 0
 limit_bottom = 0
 
-[node name="Node2D" parent="." instance=ExtResource( 3 )]
+[node name="Rock" parent="." instance=ExtResource( 3 )]
 position = Vector2( 502, 517 )
