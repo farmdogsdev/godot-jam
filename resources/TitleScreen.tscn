@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/bodrum-font/Bodrum-JzRm.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://resources/Font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://resources/scripts/TitleScreen.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 65
@@ -28,6 +29,7 @@ font_data = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.00784314, 0.00784314, 0.0627451, 1 )
+script = ExtResource( 3 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
@@ -93,3 +95,6 @@ margin_bottom = 85.0
 custom_fonts/font = SubResource( 7 )
 text = "for Godot wild jam 53"
 align = 1
+
+[connection signal="pressed" from="VBoxContainer2/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Credits" to="." method="_on_Credits_pressed"]

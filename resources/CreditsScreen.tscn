@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/bodrum-font/Bodrum-JzRm.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://resources/scripts/CreditsScreen.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -32,6 +33,7 @@ font_data = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.00784314, 0.00784314, 0.0627451, 1 )
+script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -83,3 +85,5 @@ custom_styles/focus = SubResource( 6 )
 custom_styles/disabled = SubResource( 7 )
 custom_styles/normal = SubResource( 8 )
 text = "Back"
+
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
