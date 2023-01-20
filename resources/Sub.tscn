@@ -4,7 +4,6 @@
 [ext_resource path="res://assets/graphics/light.png" type="Texture" id=2]
 [ext_resource path="res://resources/scripts/Sub.gd" type="Script" id=3]
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 51.957
 height = 134.081

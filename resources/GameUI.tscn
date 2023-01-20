@@ -4,6 +4,7 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
+outline_size = 2
 use_filter = true
 font_data = ExtResource( 1 )
 
@@ -17,6 +18,7 @@ anchor_right = 1.0
 [node name="Score" type="Label" parent="VBoxContainer"]
 margin_right = 1024.0
 margin_bottom = 50.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Score 00000"
 align = 2
