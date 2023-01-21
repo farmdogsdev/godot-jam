@@ -1,0 +1,114 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://resources/Sub.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/graphics/leviathan.png" type="Texture" id=2]
+[ext_resource path="res://Rock.tscn" type="PackedScene" id=3]
+[ext_resource path="res://resources/Shark.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/graphics/school-of-fish.png" type="Texture" id=5]
+[ext_resource path="res://assets/graphics/background-water.png" type="Texture" id=6]
+[ext_resource path="res://Rock.gd" type="Script" id=7]
+[ext_resource path="res://resources/Camera2D.gd" type="Script" id=8]
+[ext_resource path="res://new_theme.tres" type="Theme" id=9]
+[ext_resource path="res://assets/graphics/shark.png" type="Texture" id=10]
+[ext_resource path="res://resources/Level.gd" type="Script" id=11]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.85098, 0.137255, 0.137255, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.305882, 0.415686, 0.223529, 0.254902 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 34.4678, 95.9698 )
+
+[node name="Level" type="ColorRect" groups=["spawn"]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 11 )
+
+[node name="Sub" parent="." instance=ExtResource( 1 )]
+position = Vector2( 143, 350 )
+
+[node name="Camera2D" type="Camera2D" parent="Sub"]
+current = true
+smoothing_speed = 15.0
+script = ExtResource( 8 )
+
+[node name="invulnerableTimer" type="Timer" parent="Sub"]
+one_shot = true
+autostart = true
+
+[node name="damageEffects" type="AnimationPlayer" parent="Sub"]
+
+[node name="ProgressBar" type="ProgressBar" parent="Sub"]
+modulate = Color( 0.988235, 0.972549, 0.968627, 1 )
+self_modulate = Color( 0.980392, 0.964706, 0.964706, 1 )
+margin_left = -73.0
+margin_top = -98.0
+margin_right = 83.0
+margin_bottom = -80.0
+theme = ExtResource( 9 )
+custom_colors/font_color = Color( 0.807843, 0.0823529, 0.0823529, 1 )
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+value = 40.0
+percent_visible = false
+
+[node name="Leviathan" type="Sprite" parent="."]
+visible = false
+position = Vector2( 793, 445 )
+texture = ExtResource( 2 )
+
+[node name="Shark" parent="." instance=ExtResource( 4 )]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Shark"]
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Shark"]
+position = Vector2( 660, 232 )
+scale = Vector2( 9.35, 4.4625 )
+
+[node name="Shark_sprite" type="Sprite" parent="Shark"]
+position = Vector2( 656, 232 )
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark"]
+position = Vector2( 655.997, 237.503 )
+rotation = 1.57778
+shape = SubResource( 3 )
+
+[node name="FishSchool" type="Sprite" parent="."]
+position = Vector2( 249, 335 )
+texture = ExtResource( 5 )
+
+[node name="HideScreen" type="CanvasModulate" parent="."]
+visible = false
+color = Color( 0, 0, 0, 1 )
+
+[node name="Rock" parent="." instance=ExtResource( 3 )]
+position = Vector2( 424, 495 )
+script = ExtResource( 7 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 392, 202 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 259.607, 248.462 )
+scale = Vector2( 0.996094, 0.995 )
+texture = ExtResource( 6 )
+centered = false
+offset = Vector2( -652.154, -449.711 )
+
+[node name="SpawnTimer" type="Timer" parent="." groups=["spawn"]]
+wait_time = 0.05
+autostart = true
+
+[node name="Position2D" type="Position2D" parent="." groups=["spawn"]]
+position = Vector2( 653, 231 )
+
+[node name="Position2D2" type="Position2D" parent="." groups=["spawn"]]
+position = Vector2( 656, 423 )
+
+[connection signal="screen_exited" from="Shark/VisibilityNotifier2D" to="Shark" method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer2_timeout"]
