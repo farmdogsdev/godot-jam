@@ -52,19 +52,21 @@ func _physics_process(delta):
 
 
 func _on_Collide_body_entered(body):
-	if body.name == "Rock":
-		$CrashSound.play()
+	if body.name == "WinZone":
+		get_tree().change_scene("res://resources/WinScreen.tscn")
+	elif body.name == "Lightbulb":
+		$"../ParallaxBackground/HideScreen".visible = false
+		$"../obstacles/HideScreen2".visible = false
+	elif body.name == "Rock":
+		game_over = true
 	elif body.name == "Anchor":
-		$CrashSound.play()
+		game_over = true
 	elif body.name == "Leviathan":
-		$LeviathanGroan.play()
+		game_over = true
 	elif body.name == "Shark":
-		$SharkGroan.play()
+		game_over = true
 	elif body.name == "SchoolFish":
-		$CrashSound.play()
+		game_over = true
 	elif body.name == "SunkenShip":
-		$Thud.play()
-	var count = 99999
-	while (count != 0):
-		count -= 1
-	game_over = true
+		game_over = true
+	
