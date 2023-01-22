@@ -64,5 +64,5 @@ func _on_Collide_body_entered(body):
 		$CrashSound.play()
 	elif body.name == "SunkenShip":
 		$Thud.play()
-	if $CrashSound.playing == false:
+	if $CrashSound.playing == false and $LeviathanGroan.playing == false and $Thud.playing == false and $SharkGroan.playing == false:
 		game_over = true
