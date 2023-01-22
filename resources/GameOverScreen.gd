@@ -13,3 +13,7 @@ func _ready():
 
 func _on_BackToTitle_pressed():
 	get_tree().change_scene("res://resources/TitleScreen.tscn")
+
+
+func _on_PlayAgain_pressed():
+	get_tree().change_scene("res://resources/TestScene.tscn")

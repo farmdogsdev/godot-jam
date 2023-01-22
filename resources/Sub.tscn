@@ -28,3 +28,5 @@ position = Vector2( 5.96046e-08, 0 )
 position = Vector2( 0.999985, 1.00002 )
 rotation = 1.57284
 shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Collide" to="." method="_on_Collide_body_entered"]

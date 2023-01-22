@@ -70,12 +70,15 @@ your final score is xscorex
 fit_content_height = true
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="."]
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-margin_top = -85.0
+margin_left = -512.0
+margin_top = -134.0
+margin_right = 512.0
 
-[node name="BackToTitle" type="Button" parent="VBoxContainer3"]
+[node name="PlayAgain" type="Button" parent="VBoxContainer3"]
 margin_right = 1024.0
 margin_bottom = 65.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -86,6 +89,21 @@ custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
 custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
+text = "play again"
+
+[node name="BackToTitle" type="Button" parent="VBoxContainer3"]
+margin_top = 69.0
+margin_right = 1024.0
+margin_bottom = 134.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 text = "back to title"
 
+[connection signal="pressed" from="VBoxContainer3/PlayAgain" to="." method="_on_PlayAgain_pressed"]
 [connection signal="pressed" from="VBoxContainer3/BackToTitle" to="." method="_on_BackToTitle_pressed"]
