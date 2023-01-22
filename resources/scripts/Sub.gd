@@ -10,6 +10,7 @@ const UP_DIRECTION := Vector2.UP
 var speed := 400
 var _velocity := Vector2.ZERO
 var game_over = false
+onready var game_over_screen = get_node("res://resources/GameOverScreen.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -51,4 +52,15 @@ func _physics_process(delta):
 
 
 func _on_Collide_body_entered(body):
-	game_over = true
+	if body.name == "Rock":
+		$CrashSound.play()
+	elif body.name == "Anchor":
+		$CrashSound.play()
+	elif body.name == "Leviathan":
+		$CrashSound.play()
+	elif body.name == "Shark":
+		$CrashSound.play()
+	elif body.name == "SchoolFish":
+		$CrashSound.play()
+	if $CrashSound.playing == false:
+		game_over = true

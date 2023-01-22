@@ -10,9 +10,9 @@ height = 198.827
 position = Vector2( 0, 1 )
 texture = ExtResource( 1 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Leviathan" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Leviathan"]
 position = Vector2( 27, 30 )
 rotation = 1.58975
 shape = SubResource( 1 )

@@ -10,7 +10,6 @@ extends ColorRect
 func _ready():
 	pass # Replace with function body.
 
-
 func _on_BackToTitle_pressed():
 	get_tree().change_scene("res://resources/TitleScreen.tscn")
 

@@ -9,8 +9,8 @@ radius = 73.0274
 texture = ExtResource( 1 )
 flip_h = true
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+[node name="SchoolFish" type="KinematicBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SchoolFish"]
 position = Vector2( -2, 0 )
 shape = SubResource( 1 )

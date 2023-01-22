@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/graphics/sub.png" type="Texture" id=1]
 [ext_resource path="res://assets/graphics/light.png" type="Texture" id=2]
 [ext_resource path="res://resources/scripts/Sub.gd" type="Script" id=3]
+[ext_resource path="res://assets/sound/ClickClunk.wav" type="AudioStream" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 51.957
@@ -28,5 +29,10 @@ position = Vector2( 5.96046e-08, 0 )
 position = Vector2( 0.999985, 1.00002 )
 rotation = 1.57284
 shape = SubResource( 1 )
+
+[node name="CrashSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( -186, -372 )
+stream = ExtResource( 4 )
+volume_db = 2.889
 
 [connection signal="body_entered" from="Collide" to="." method="_on_Collide_body_entered"]

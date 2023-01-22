@@ -9,7 +9,9 @@ height = 150.311
 [node name="SunkenShip" type="Sprite"]
 texture = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="SunkenShip" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="SunkenShip"]
 position = Vector2( 16, 31 )
 rotation = 0.853334
 shape = SubResource( 1 )

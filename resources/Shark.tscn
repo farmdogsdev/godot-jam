@@ -7,12 +7,12 @@ radius = 21.1142
 height = 127.771
 
 [node name="Shark" type="Sprite"]
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 1 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+[node name="Shark" type="KinematicBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark"]
 position = Vector2( -13, 11 )
 rotation = 1.56927
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
