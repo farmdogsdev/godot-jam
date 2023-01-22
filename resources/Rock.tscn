@@ -6,15 +6,15 @@
 radius = 48.1696
 height = 120.976
 
-[node name="Node2D" type="Node2D"]
+[node name="Rock" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 3, 6 )
 texture = ExtResource( 1 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( -2, 13 )
 rotation = 1.58412
 shape = SubResource( 1 )

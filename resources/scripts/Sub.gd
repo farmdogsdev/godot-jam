@@ -9,6 +9,7 @@ const UP_DIRECTION := Vector2.UP
 
 var speed := 400
 var _velocity := Vector2.ZERO
+var game_over = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,7 +17,11 @@ func _ready():
 
 
 func _physics_process(delta):
+	if game_over:
+		get_tree().change_scene("res://resources/GameOverScreen.tscn")
+		
 	$"../CanvasLayer/GameUI".generate_score()
+		
 	var _horizontal_direction = (
 		Input.get_action_strength("ui_right")
 		- Input.get_action_strength("ui_left")
@@ -28,6 +33,8 @@ func _physics_process(delta):
 	
 	if position.y >= 440:
 		position.y = 440
+	elif position.y <= 75:
+		position.y = 75
 	
 	
 	_velocity.x = _horizontal_direction * speed

@@ -21,7 +21,10 @@ scale = Vector2( 0.910494, 0.909524 )
 texture = ExtResource( 2 )
 shadow_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Collide" type="Area2D" parent="."]
+position = Vector2( 5.96046e-08, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collide"]
 position = Vector2( 0.999985, 1.00002 )
 rotation = 1.57284
 shape = SubResource( 1 )
