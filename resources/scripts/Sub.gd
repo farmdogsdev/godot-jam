@@ -26,6 +26,9 @@ func _physics_process(delta):
 		- Input.get_action_strength("ui_up")
 	)
 	
+	if position.y >= 440:
+		position.y = 440
+	
 	
 	_velocity.x = _horizontal_direction * speed
 	_velocity.y = _vertical_direction * speed

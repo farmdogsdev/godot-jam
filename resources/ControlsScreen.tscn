@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/bodrum-font/Bodrum-JzRm.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://resources/ControlsScreen.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=7]
+size = 100
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 60
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 65
+outline_size = 3
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[node name="ControlsScreen" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.00784314, 0.00784314, 0.0627451, 1 )
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+margin_bottom = 120.0
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 100.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "Controls"
+align = 1
+valign = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer2"]
+margin_top = 117.0
+margin_right = 1024.0
+margin_bottom = 483.0
+custom_fonts/normal_font = SubResource( 8 )
+bbcode_enabled = true
+bbcode_text = "[center]Move the sub up and down to avoid obstacles and collect power ups.
+[u][color=green]Move Up[/color][/u] Up Arrow Key or W
+[u][color=green]Move Down[/color][/u] Down Arrow Key or S
+
+[/center]"
+text = "Move the sub up and down to avoid obstacles and collect power ups.
+Move Up Up Arrow Key or W
+Move Down Down Arrow Key or S
+
+"
+fit_content_height = true
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -85.0
+
+[node name="Confirm" type="Button" parent="VBoxContainer3"]
+margin_right = 1024.0
+margin_bottom = 65.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "Confirm"
+
+[connection signal="pressed" from="VBoxContainer3/Confirm" to="." method="_on_Confirm_pressed"]
