@@ -8,8 +8,8 @@ onready var score_report = get_node("res://resources/GameUI.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-	#$VBoxContainer2/RichTextLabel.text += str(score_report.get_score())
+	$LeviathanGroan.play()
+	$Thud.play()
 
 func _on_BackToTitle_pressed():
 	get_tree().change_scene("res://resources/TitleScreen.tscn")

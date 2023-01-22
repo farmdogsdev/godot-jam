@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/bodrum-font/Bodrum-JzRm.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://resources/GameOverScreen.gd" type="Script" id=2]
+[ext_resource path="res://assets/sound/Thud.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sound/lowgroan3.wav" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=7]
 size = 100
@@ -100,6 +102,13 @@ custom_styles/focus = SubResource( 4 )
 custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
 text = "back to title"
+
+[node name="LeviathanGroan" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = 5.778
+
+[node name="Thud" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
 
 [connection signal="pressed" from="VBoxContainer3/PlayAgain" to="." method="_on_PlayAgain_pressed"]
 [connection signal="pressed" from="VBoxContainer3/BackToTitle" to="." method="_on_BackToTitle_pressed"]
