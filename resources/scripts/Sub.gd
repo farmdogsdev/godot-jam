@@ -57,10 +57,12 @@ func _on_Collide_body_entered(body):
 	elif body.name == "Anchor":
 		$CrashSound.play()
 	elif body.name == "Leviathan":
-		$CrashSound.play()
+		$LeviathanGroan.play()
 	elif body.name == "Shark":
-		$CrashSound.play()
+		$SharkGroan.play()
 	elif body.name == "SchoolFish":
 		$CrashSound.play()
+	elif body.name == "SunkenShip":
+		$Thud.play()
 	if $CrashSound.playing == false:
 		game_over = true

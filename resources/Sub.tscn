@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/graphics/sub.png" type="Texture" id=1]
 [ext_resource path="res://assets/graphics/light.png" type="Texture" id=2]
 [ext_resource path="res://resources/scripts/Sub.gd" type="Script" id=3]
 [ext_resource path="res://assets/sound/ClickClunk.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/sound/Ambient_music.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/sound/lowgroan3.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/sound/lowgroan.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/sound/Thud.wav" type="AudioStream" id=8]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 51.957
@@ -34,5 +38,18 @@ shape = SubResource( 1 )
 position = Vector2( -186, -372 )
 stream = ExtResource( 4 )
 volume_db = 2.889
+
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+
+[node name="SharkGroan" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+
+[node name="LeviathanGroan" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+
+[node name="Thud" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
 
 [connection signal="body_entered" from="Collide" to="." method="_on_Collide_body_entered"]
