@@ -7,7 +7,7 @@ extends KinematicBody2D
 
 const UP_DIRECTION := Vector2.UP
 
-var speed := 600.0
+var speed := 400
 var _velocity := Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
@@ -16,6 +16,7 @@ func _ready():
 
 
 func _physics_process(delta):
+	$"../CanvasLayer/GameUI".generate_score()
 	var _horizontal_direction = (
 		Input.get_action_strength("ui_right")
 		- Input.get_action_strength("ui_left")

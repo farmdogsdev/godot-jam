@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ClickClunk.wav-b01fa15de9637718f6d2477d54731faa.sample"
+
+[deps]
+
+source_file="res://assets/sound/ClickClunk.wav"
+dest_files=[ "res://.import/ClickClunk.wav-b01fa15de9637718f6d2477d54731faa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
